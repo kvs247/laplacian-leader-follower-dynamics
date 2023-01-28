@@ -1,20 +1,19 @@
 import * as randomMatrix from '../randomMatrix.js'
 
+import * as matrixMath from '../matrixMath.js'
+
 console.log('');
 
 generateLaplacianMatrixTest();
 generateAdjacencyMatrixTest();
 generateRandomElementTest();
-transposeTest();
-sumTest();
-changeMatrixParityTest();
 
 // generateLaplacianMatrix
 function generateLaplacianMatrixTest() {
     const dim = 9;
     for (let i = 0; i < 100; i++) {
         const mat = randomMatrix.generateLaplacianMatrix(dim);
-        const matTranspose = randomMatrix.transpose(mat);
+        const matTranspose = matrixMath.transpose(mat);
         // check that the sum of 1s in the ith row and column are both zero
         for (let i = 0; i < dim; i++) {
             const rowSum = mat[i].reduce((acc, ele) => acc += ele, 0);
@@ -33,7 +32,7 @@ function generateAdjacencyMatrixTest() {
     const dim = 9;
     for (let i = 0; i < 100; i++) {
         const mat = randomMatrix.generateAdjacencyMatrix(dim);
-        const matTranspose = randomMatrix.transpose(mat);
+        const matTranspose = matrixMath.transpose(mat);
         // check that the sum of 1s in the ith row and column are equal
         for (let i = 0; i < dim; i++) {
             const rowSum = mat[i].reduce((acc, ele) => acc += ele, 0);
@@ -75,68 +74,3 @@ function generateRandomElementTest() {
 };
 
 
-// transpose
-function transposeTest() {
-    const testMatrix = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-        [10, 11, 12]
-    ];
-    const expectedResult = [
-        [1, 4, 7, 10],
-        [2, 5, 8, 11],
-        [3, 6, 9, 12]
-    ];
-    if (randomMatrix.transpose(testMatrix).toString() !== expectedResult.toString()) { 
-        console.log(randomMatrix.transpose(testMatrix));
-        throw new Error('transpose did not pass');
-    };
-    console.log('transpose passed');
-    console.log('');
-};
-
-// sum
-function sumTest() {
-    const testMatrix1 = [
-        [1, -1, 1],
-        [2, 4, -1],
-        [0, 1, 0]
-    ];
-    const testMatrix2 = [
-        [0, 0, 0],
-        [-2, 4, 2],
-        [1, 5, -3]
-    ];
-    const expectedResult = [
-        [1, -1, 1],
-        [0, 8, 1],
-        [1, 6, -3]
-    ];
-    if (randomMatrix.sum(testMatrix1, testMatrix2).toString() !== expectedResult.toString()) {
-        console.log(randomMatrix.sum(testMatrix1, testMatrix2));
-        throw new Error('sum did not pass');
-    };
-    console.log('sum passed');
-    console.log('');
-}
-
-// changeMatrixParity
-function changeMatrixParityTest() {
-    const testMatrix1 = [
-        [1, -1, 1],
-        [2, 4, -1],
-        [0, 1, 0]
-    ];
-    const expectedResult = [
-        [-1, 1, -1],
-        [-2, -4, 1],
-        [0, -1, 0]
-    ];
-    if (randomMatrix.changeMatrixParity(testMatrix1).toString() !== expectedResult.toString()) {
-        console.log(randomMatrix.changeMatrixParity(testMatrix1));
-        throw new Error('changeMatrixParity did not pass');
-    };
-    console.log('changeMatirxParity passed');
-    console.log('');
-}

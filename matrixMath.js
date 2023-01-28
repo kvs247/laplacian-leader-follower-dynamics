@@ -33,6 +33,7 @@ export function changeMatrixParity(matrix) {
 }
 
 export function printMatrix(matrix) {
+    console.log('');
     for (let i = 0; i < matrix.length; i++) {
         let row = '|';
         for (let j = 0; j < matrix.length; j++) {
@@ -46,4 +47,5 @@ export function printMatrix(matrix) {
         row += ' |';
         console.log(row);
     };
+    console.log('');
 }

@@ -93,102 +93,102 @@ console.log('here', vectorToLatex([0.5773502691896257,0.7071067811865476,-0.4082
 
 // generate random Laplacian matrix
 
-function generateLaplacianMatrix(n) {
-    const adjacencyMatrix = generateAdjacencyMatrix(n);
-    for (let i = 0; i < n; i++) {
-        const rowSum = adjacencyMatrix[i].reduce((sum, x) => sum + x);
-        adjacencyMatrix[i][i] = -rowSum;
-    }
+// function generateLaplacianMatrix(n) {
+//     const adjacencyMatrix = generateAdjacencyMatrix(n);
+//     for (let i = 0; i < n; i++) {
+//         const rowSum = adjacencyMatrix[i].reduce((sum, x) => sum + x);
+//         adjacencyMatrix[i][i] = -rowSum;
+//     }
 
-    return changeMatrixParity([...adjacencyMatrix]);
-}
+//     return changeMatrixParity([...adjacencyMatrix]);
+// }
 
 // generate random Adjacency matrix
 
-function generateAdjacencyMatrix(n) {
-    if (n < 3) {
-        console.log('Error: n < 3 for matrix dimension n.');
-        return;
-    }
+// function generateAdjacencyMatrix(n) {
+//     if (n < 3) {
+//         console.log('Error: n < 3 for matrix dimension n.');
+//         return;
+//     }
 
-    const result = [];
-    for (let i = 0; i < n; i++) {
-        const row = [];
-        for (let  j = 0; j < n; j++) {
-            row.push(randomMatrixElement(i, j));
-        }
-        result.push(row);
-    }
+//     const result = [];
+//     for (let i = 0; i < n; i++) {
+//         const row = [];
+//         for (let  j = 0; j < n; j++) {
+//             row.push(randomMatrixElement(i, j));
+//         }
+//         result.push(row);
+//     }
 
-    const resultTranspose = getMatrixTranspose(result);
+//     const resultTranspose = getMatrixTranspose(result);
 
-    return sumMatrix(result, resultTranspose);
-}
+//     return sumMatrix(result, resultTranspose);
+// }
 
 // prints readable matrix in console
 
-function printMatrix(matrix) {
-    for (let i = 0; i < matrix.length; i++) {
-        let row = '|';
-        for (let j = 0; j < matrix.length; j++) {
-            const value = matrix[i][j];
-            if (value < 0) {
-                row += ` ${value}`; // one space
-            } else {
-                row += `  ${value}`; // two spaces
-            }
-        }
-        row += ' |'
-        console.log(row);
-    }
-}
+// function printMatrix(matrix) {
+//     for (let i = 0; i < matrix.length; i++) {
+//         let row = '|';
+//         for (let j = 0; j < matrix.length; j++) {
+//             const value = matrix[i][j];
+//             if (value < 0) {
+//                 row += ` ${value}`; // one space
+//             } else {
+//                 row += `  ${value}`; // two spaces
+//             }
+//         }
+//         row += ' |'
+//         console.log(row);
+//     }
+// }
 
 // returns 1 or 0 at random for matrix entries (indexed by i, j) above diagonal and zero for all else. 
 
-function randomMatrixElement(i, j) {
-    if (j <= i) {
-        return 0;
-    } else {
-        return Math.round(Math.random());
-    }
-}
+// function randomMatrixElement(i, j) {
+//     if (j <= i) {
+//         return 0;
+//     } else {
+//         return Math.round(Math.random());
+//     }
+// }
 
 // adds two matrices together
 
-function sumMatrix(matrix1, matrix2) {
-    const n = matrix1.length;
-    if (n != matrix2.length) {
-        console.log('Error: trying to add two matrices of unequal dimension');
-        return;
-    }
+// function sumMatrix(matrix1, matrix2) {
+//     const n = matrix1.length;
+//     if (n != matrix2.length) {
+//         console.log('Error: trying to add two matrices of unequal dimension');
+//         return;
+//     }
 
-    const result = [...matrix1];
-    for (let i = 0; i < n; i++) {
-        for (let j = 0; j < n; j++) {
-            result[i][j] = matrix1[i][j] + matrix2[i][j]; 
-        }
-    }
+//     const result = [...matrix1];
+//     for (let i = 0; i < n; i++) {
+//         for (let j = 0; j < n; j++) {
+//             result[i][j] = matrix1[i][j] + matrix2[i][j]; 
+//         }
+//     }
 
-    return result;
-}   
+//     return result;
+// }   
 
 // gets transpose matrix of given matrix
 
-function getMatrixTranspose(matrix) {
-    return matrix[0].map((_, colIndex) => matrix.map(row => row[colIndex]));
-}
+// function getMatrixTranspose(matrix) {
+//     return matrix[0].map((_, colIndex) => matrix.map(row => row[colIndex]));
+// }
 
-// changes parity of matrix
+// // changes parity of matrix
 
-function changeMatrixParity(matrix) {
-    const result = [];
-    for (let i = 0; i < matrix.length; i++) {
-        const row = matrix[i].map(x => -x);
-        result.push(row);
-    }
+// function changeMatrixParity(matrix) {
+//     const result = [];
+//     for (let i = 0; i < matrix.length; i++) {
+//         const row = matrix[i].map(x => -x);
+//         result.push(row);
+//     }
 
-    return result;
-}
+//     return result;
+// }
 
 // SECTION 2: Eigenvectors
 
@@ -264,24 +264,24 @@ function getEigenState(matrix) {
     return [ resultValues, resultVectors ];
 }
 
-function zeroFloatCorrection(x) {
-    if (math.abs(x) < 1e-10) {
-        return 0;
-    } else {
-        return x;
-    }
-}
+// function zeroFloatCorrection(x) {
+//     if (math.abs(x) < 1e-10) {
+//         return 0;
+//     } else {
+//         return x;
+//     }
+// }
 
-function getControlSet(n) {
-    let binaryString = '';
-    for (let i = 1; i < Math.pow(2, n)-1; i++) {
-        binaryString += i.toString(2).padStart(n, '0');
-    }
+// function getControlSet(n) {
+//     let binaryString = '';
+//     for (let i = 1; i < Math.pow(2, n)-1; i++) {
+//         binaryString += i.toString(2).padStart(n, '0');
+//     }
 
-    const binaryArray = binaryString.split('').map(Number);
-    const controlSet = [];
-    while (binaryArray.length) { controlSet.push(binaryArray.splice(0, n)) };
+//     const binaryArray = binaryString.split('').map(Number);
+//     const controlSet = [];
+//     while (binaryArray.length) { controlSet.push(binaryArray.splice(0, n)) };
 
 
-    return controlSet;
-}
+//     return controlSet;
+// }

@@ -19,5 +19,8 @@
     "url": "https://github.com/Schnyle/laplacian-leader-follower-dynamics/issues"
   },
   "homepage": "https://github.com/Schnyle/laplacian-leader-follower-dynamics#readme",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "mathjs": "^11.5.0"
+  }
 }

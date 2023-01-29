@@ -223,46 +223,46 @@ function test() {
 // test();
 
 // doesn't calculate estates
-function pbhTest(matrix, eigenValues, eigenVectors) {
-    const n = matrix.length;
-    const controlSet = getControlSet(n);
-    let zeroCount = 0;
+// function pbhTest(matrix, eigenValues, eigenVectors) {
+//     const n = matrix.length;
+//     const controlSet = getControlSet(n);
+//     let zeroCount = 0;
 
-    eigenValues = eigenValues.map(function(x) {return Math.round(x * 1e9)/1e9});
-    const eigenValuesUnique = [...new Set(eigenValues)];
-    if (eigenValues.length != eigenValuesUnique.length) {
-        return 'completely uncontrollable (degenerate)';
-    }    
+//     eigenValues = eigenValues.map(function(x) {return Math.round(x * 1e9)/1e9});
+//     const eigenValuesUnique = [...new Set(eigenValues)];
+//     if (eigenValues.length != eigenValuesUnique.length) {
+//         return 'completely uncontrollable (degenerate)';
+//     }    
  
-    for (const controlVector of controlSet) {
-        for (const eigenVector of eigenVectors) {
-            const innerProduct = zeroFloatCorrection(math.dot(controlVector, eigenVector));
-            if (innerProduct == 0) {
-                zeroCount += 1;
-            }
-        }
-    }
-    if (zeroCount == math.pow(2, n) - 2) {
-        return 'completely uncontrollable (nondegenerate)';
-    } else if (zeroCount == 0) {
-        return 'essentially controllable';
-    } else {
-        return 'conditionally controllable';
-    }
-}
+//     for (const controlVector of controlSet) {
+//         for (const eigenVector of eigenVectors) {
+//             const innerProduct = zeroFloatCorrection(math.dot(controlVector, eigenVector));
+//             if (innerProduct == 0) {
+//                 zeroCount += 1;
+//             }
+//         }
+//     }
+//     if (zeroCount == math.pow(2, n) - 2) {
+//         return 'completely uncontrollable (nondegenerate)';
+//     } else if (zeroCount == 0) {
+//         return 'essentially controllable';
+//     } else {
+//         return 'conditionally controllable';
+//     }
+// }
 
-function getEigenState(matrix) {
-    let resultVectors = []; 
+// function getEigenState(matrix) {
+//     let resultVectors = []; 
 
-    const eigenState = math.eigs(matrix);
-    const resultValues = eigenState.values.map(zeroFloatCorrection);
-    const vectors = eigenState.vectors;
-    for (let i = 0; i < vectors.length; i++) {
-        resultVectors.push(math.column(vectors, i).flat().map(zeroFloatCorrection));
-    }
+//     const eigenState = math.eigs(matrix);
+//     const resultValues = eigenState.values.map(zeroFloatCorrection);
+//     const vectors = eigenState.vectors;
+//     for (let i = 0; i < vectors.length; i++) {
+//         resultVectors.push(math.column(vectors, i).flat().map(zeroFloatCorrection));
+//     }
 
-    return [ resultValues, resultVectors ];
-}
+//     return [ resultValues, resultVectors ];
+// }
 
 // function zeroFloatCorrection(x) {
 //     if (math.abs(x) < 1e-10) {

@@ -67,6 +67,35 @@ export function getControlSet(n) {
     return controlSet;
 }
 
+// gets controllability class of matrix
+export function pbhTest(matrix, eigenValues, eigenVectors) {
+    const n = matrix.length;
+    const controlSet = getControlSet(n);
+    let zeroCount = 0;
+
+    eigenValues = eigenValues.map(function(x) {return Math.round(x * 1e9)/1e9});
+    const eigenValuesUnique = [...new Set(eigenValues)];
+    if (eigenValues.length != eigenValuesUnique.length) {
+        return 'completely uncontrollable (degenerate)';
+    };
+ 
+    for (const controlVector of controlSet) {
+        for (const eigenVector of eigenVectors) {
+            const innerProduct = zeroFloatCorrection(math.dot(controlVector, eigenVector));
+            if (innerProduct == 0) {
+                zeroCount += 1;
+            };
+        };
+    };
+    if (zeroCount == math.pow(2, n) - 2) {
+        return 'completely uncontrollable (nondegenerate)';
+    } else if (zeroCount == 0) {
+        return 'essentially controllable';
+    } else {
+        return 'conditionally controllable';
+    };
+}
+
 // calculate eigenstate of given matrix
 export function getEigenState(matrix) {
     const result = [];
@@ -78,11 +107,11 @@ export function getEigenState(matrix) {
         eigenVectors.push(math.column(vectors, i).flat().map(zeroFloatCorrection));
     };
 
-    for (let i = 0; i < eigenValues.length; i++) {
-        result.push([eigenValues[i], eigenVectors[i]]);
-    };
+    // for (let i = 0; i < eigenValues.length; i++) {
+    //     result.push([eigenValues[i], eigenVectors[i]]);
+    // };
 
-    return result;
+    return [ eigenValues, eigenVectors ];
 }
 
 // returns zero for values with size (abs) less than 1e-10

@@ -24,7 +24,7 @@ def generateAdjacencyMatrixTest():
     for i in range(99):
         mat = randomMatrix.generateAdjacencyMatrix(dim)
         matTranspose = np.transpose(mat)
-        # check that the sum of the ith column and row are equal
+        # check that the sum of the jth column and row are equal
         for j in range(dim):
             rowSum = np.sum(mat[j])
             columnSum = np.sum(matTranspose[j])
@@ -38,7 +38,7 @@ def generateLaplacianMatrixTest():
     for i in range(99):
         mat = randomMatrix.generateLaplacianMatrix(dim)
         matTranspose = np.transpose(mat)
-        # check that the sum of the ith column and row are both 0
+        # check that the sum of the jth column and row are both 0
         for j in range(dim):
             rowSum = np.sum(mat[j])
             columnSum = np.sum(matTranspose[j])

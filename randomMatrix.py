@@ -23,3 +23,13 @@ def generateAdjacencyMatrix(dim):
     result = result + resultTranspose
 
     return result
+
+# generate random Laplacian matrix
+def generateLaplacianMatrix(dim):
+    adjacencyMatrix = generateAdjacencyMatrix(dim)
+    i = 0
+    for row in adjacencyMatrix:
+        adjacencyMatrix[i][i] = -np.sum(row)
+        i += 1
+
+    return -adjacencyMatrix

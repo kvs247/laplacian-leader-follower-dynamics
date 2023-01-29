@@ -33,9 +33,24 @@ def generateAdjacencyMatrixTest():
     print('')
     print('generateAdjacencyMatrix passed')
 
+def generateLaplacianMatrixTest():
+    dim = 9
+    for i in range(99):
+        mat = randomMatrix.generateLaplacianMatrix(dim)
+        matTranspose = np.transpose(mat)
+        # check that the sum of the ith column and row are both 0
+        for j in range(dim):
+            rowSum = np.sum(mat[j])
+            columnSum = np.sum(matTranspose[j])
+            if (rowSum != 0 or columnSum != 0):
+                raise Exception('generateLaplacianMatrix did not pass')
+    print('')
+    print('generateLaplacianMatrix passed')
+
 
 generateRandomElementTest()
 generateAdjacencyMatrixTest()
+generateLaplacianMatrixTest()
 
 print('')
 print('all tests passed')

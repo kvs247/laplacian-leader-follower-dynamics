@@ -97,26 +97,26 @@ function getControlSetTest() {
 }
 
 // NEED TO MAKE TEST FOR EIGENSTATES
-// getEigenState
-// function getEigenStateTest() {
-//     const rootTwo = sqrt(2);
-//     const inputMatrix = [
-//         [1, 0, 1],
-//         [0, 1, 0],
-//         [1, 0, 1]
-//     ];
-//     const expectedResult = [
-//         [0, [rootTwo, 0, -rootTwo]],
-//         [1, [0, 1, 0]],
-//         [2, [rootTwo, 0, rootTwo]]
-//     ];
-//     if (matrixMath.getEigenState(inputMatrix).toString() !== expectedResult.toString()) {
-//         throw new Error('getEigenStateTest')
-//         console.log(matrixMath.getEigenState(inputMatrix));
-//     };
-//     console.log('getEigenState passed');
-//     console.log('');
-// }
+getEigenState
+function getEigenStateTest() {
+    const rootTwo = sqrt(2);
+    const inputMatrix = [
+        [1, 0, 1],
+        [0, 1, 0],
+        [1, 0, 1]
+    ];
+    const expectedResult = [
+        [0, [rootTwo, 0, -rootTwo]],
+        [1, [0, 1, 0]],
+        [2, [rootTwo, 0, rootTwo]]
+    ];
+    if (matrixMath.getEigenState(inputMatrix).toString() !== expectedResult.toString()) {
+        throw new Error('getEigenStateTest')
+        console.log(matrixMath.getEigenState(inputMatrix));
+    };
+    console.log('getEigenState passed');
+    console.log('');
+}
 
 // zeroFloatCorrection
 function zeroFloatCorrectionTest() {

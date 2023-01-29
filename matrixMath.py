@@ -1,5 +1,16 @@
 import numpy as np
 
+# get array whose first value is array of eigenvalues and second value is array of eigenvectors, using the same index
+def getEigenState(matrix):
+    eigenState = np.linalg.eig(matrix)
+    eigenValues = eigenState[0]
+    eigenVectors = np.transpose(eigenState[1])
+    return [eigenValues, eigenVectors] 
+
+# print(getEigenState([[1,0,1],[0,1,0],[1,0,1]]))
+
+# get 2D array containing all binary vectors for the given dimension as an array
+# note: this does not include the zero vector or all 1s vector
 def getControlSet(dim):
     result = []
     for i in range(1, (2 ** dim) - 1):
@@ -22,6 +33,13 @@ def printMatrix(matrix):
         row += ' |'
         print(row)
     print('')
+
+def zeroFloatCorrection(x):
+    if abs(x) < 1e-10:
+        return 0
+    else:
+        return x
+
 
 
 

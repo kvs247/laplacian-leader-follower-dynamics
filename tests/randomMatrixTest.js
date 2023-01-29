@@ -8,6 +8,9 @@ generateLaplacianMatrixTest();
 generateAdjacencyMatrixTest();
 generateRandomElementTest();
 
+console.log('all tests passed');
+console.log('');
+
 // generateLaplacianMatrix
 function generateLaplacianMatrixTest() {
     const dim = 9;

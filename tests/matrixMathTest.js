@@ -4,6 +4,9 @@ transposeTest();
 sumTest();
 changeMatrixParityTest();
 
+console.log('all tests passed');
+console.log('');
+
 // transpose
 function transposeTest() {
     const inputMatrix = [

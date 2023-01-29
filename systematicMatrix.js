@@ -1,8 +1,8 @@
 // systematic matrix generation
 import * as matrixMath from './matrixMath.js';
 
-let x = getAllLaplacianMatrices(4);
-x.forEach(matrixMath.printMatrix);
+let x = getAllLaplacianMatrices(3);
+// console.log(x)
 
 // get array of all Laplacian matrices for dimension > 2
 export function getAllLaplacianMatrices(dim) {

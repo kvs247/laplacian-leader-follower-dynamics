@@ -1,5 +1,11 @@
 import numpy as np
 
+# determine controllability class of given matrix
+def pbhTest(matrix, eigenValues, eigenVectors):
+    n = np.shape(matrix)[0]
+    controlSet = getControlSet(n)
+    zeroCount = 0
+
 # get array whose first value is array of eigenvalues and second value is array of eigenvectors, using the same index
 def getEigenState(matrix):
     eigenState = np.linalg.eig(matrix)

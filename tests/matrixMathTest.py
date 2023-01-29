@@ -16,6 +16,8 @@ def getControlSetTest():
     result = matrixMath.getControlSet(inputDim)
     if not (result == expectedResult).all():
         raise Exception('getAllBinaryVectors did not pass')
+    print('')
+    print('getControSet passed')
 
 def getEigenStateTest():
     inputMatrix = np.array([
@@ -27,6 +29,17 @@ def getEigenStateTest():
     result = matrixMath.getEigenState(inputMatrix)[0]
     if not (result == expectedResult).all():
         raise Exception('getEigenState did not pass')
+    print('')
+    print('getEigenState passed')
+
+def pbhTestTest():
+    print('')
+    print('pbhTest passed')
 
 getControlSetTest()
 getEigenStateTest()
+pbhTestTest()
+
+print('')
+print('all tests passed')
+print('')

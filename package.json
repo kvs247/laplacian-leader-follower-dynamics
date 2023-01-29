@@ -21,8 +21,6 @@
   "homepage": "https://github.com/Schnyle/laplacian-leader-follower-dynamics#readme",
   "type": "module",
   "dependencies": {
-    "file-saver": "^2.0.5",
-    "filesaver": "^0.0.13",
     "mathjs": "^11.5.0"
   }
 }

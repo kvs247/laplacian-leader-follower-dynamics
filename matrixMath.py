@@ -36,8 +36,8 @@ def getBinaryVectors(dim):
 # get array whose first value is array of eigenvalues and second value is array of eigenvectors, using the same index
 def getEigenState(matrix):
     eigenState = np.linalg.eig(matrix)
-    eigenValues = eigenState[0]
-    eigenVectors = np.transpose(eigenState[1]) 
+    eigenValues = eigenState[0].real
+    eigenVectors = np.transpose(eigenState[1]).real 
     eigenValues[abs(eigenValues) < 1e-10] = 0 # zero float correction 
     eigenVectors[abs(eigenVectors) < 1e-10] = 0 # zero float correction
     return [eigenValues, eigenVectors] 

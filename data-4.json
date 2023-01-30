@@ -1,0 +1,1862 @@
+[
+  {
+    "id": "041",
+    "matrix": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        0,
+        -1,
+        1
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "042",
+    "matrix": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        1
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "043",
+    "matrix": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        -1,
+        2
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "044",
+    "matrix": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        -1,
+        0
+      ],
+      [
+        0,
+        -1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "045",
+    "matrix": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        -1,
+        0
+      ],
+      [
+        0,
+        -1,
+        2,
+        -1
+      ],
+      [
+        0,
+        0,
+        -1,
+        1
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "046",
+    "matrix": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        -1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        1,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        1
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "047",
+    "matrix": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        -1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        2,
+        -1
+      ],
+      [
+        0,
+        -1,
+        -1,
+        2
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "048",
+    "matrix": [
+      [
+        1,
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        0,
+        1
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "049",
+    "matrix": [
+      [
+        1,
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        -1
+      ],
+      [
+        -1,
+        0,
+        -1,
+        2
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "0410",
+    "matrix": [
+      [
+        1,
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        1,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        -1,
+        -1,
+        0,
+        2
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "0411",
+    "matrix": [
+      [
+        1,
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        1,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        1,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        -1,
+        3
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0412",
+    "matrix": [
+      [
+        1,
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        1,
+        -1,
+        0
+      ],
+      [
+        0,
+        -1,
+        1,
+        0
+      ],
+      [
+        -1,
+        0,
+        0,
+        1
+      ]
+    ],
+    "controllability": "completely uncontrollable (degenerate)"
+  },
+  {
+    "id": "0413",
+    "matrix": [
+      [
+        1,
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        1,
+        -1,
+        0
+      ],
+      [
+        0,
+        -1,
+        2,
+        -1
+      ],
+      [
+        -1,
+        0,
+        -1,
+        2
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0414",
+    "matrix": [
+      [
+        1,
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        2,
+        -1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        1,
+        0
+      ],
+      [
+        -1,
+        -1,
+        0,
+        2
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0415",
+    "matrix": [
+      [
+        1,
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        2,
+        -1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        2,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        -1,
+        3
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0416",
+    "matrix": [
+      [
+        1,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "0417",
+    "matrix": [
+      [
+        1,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        2,
+        -1
+      ],
+      [
+        0,
+        0,
+        -1,
+        1
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "0418",
+    "matrix": [
+      [
+        1,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        -1
+      ],
+      [
+        -1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        1
+      ]
+    ],
+    "controllability": "completely uncontrollable (degenerate)"
+  },
+  {
+    "id": "0419",
+    "matrix": [
+      [
+        1,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        -1
+      ],
+      [
+        -1,
+        0,
+        2,
+        -1
+      ],
+      [
+        0,
+        -1,
+        -1,
+        2
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0420",
+    "matrix": [
+      [
+        1,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        1,
+        -1,
+        0
+      ],
+      [
+        -1,
+        -1,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "0421",
+    "matrix": [
+      [
+        1,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        1,
+        -1,
+        0
+      ],
+      [
+        -1,
+        -1,
+        3,
+        -1
+      ],
+      [
+        0,
+        0,
+        -1,
+        1
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0422",
+    "matrix": [
+      [
+        1,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        2,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        2,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        1
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0423",
+    "matrix": [
+      [
+        1,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        2,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        3,
+        -1
+      ],
+      [
+        0,
+        -1,
+        -1,
+        2
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0424",
+    "matrix": [
+      [
+        2,
+        0,
+        -1,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        1,
+        0
+      ],
+      [
+        -1,
+        0,
+        0,
+        1
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "0425",
+    "matrix": [
+      [
+        2,
+        0,
+        -1,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        2,
+        -1
+      ],
+      [
+        -1,
+        0,
+        -1,
+        2
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "0426",
+    "matrix": [
+      [
+        2,
+        0,
+        -1,
+        -1
+      ],
+      [
+        0,
+        1,
+        0,
+        -1
+      ],
+      [
+        -1,
+        0,
+        1,
+        0
+      ],
+      [
+        -1,
+        -1,
+        0,
+        2
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0427",
+    "matrix": [
+      [
+        2,
+        0,
+        -1,
+        -1
+      ],
+      [
+        0,
+        1,
+        0,
+        -1
+      ],
+      [
+        -1,
+        0,
+        2,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        -1,
+        3
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0428",
+    "matrix": [
+      [
+        2,
+        0,
+        -1,
+        -1
+      ],
+      [
+        0,
+        1,
+        -1,
+        0
+      ],
+      [
+        -1,
+        -1,
+        2,
+        0
+      ],
+      [
+        -1,
+        0,
+        0,
+        1
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0429",
+    "matrix": [
+      [
+        2,
+        0,
+        -1,
+        -1
+      ],
+      [
+        0,
+        1,
+        -1,
+        0
+      ],
+      [
+        -1,
+        -1,
+        3,
+        -1
+      ],
+      [
+        -1,
+        0,
+        -1,
+        2
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0430",
+    "matrix": [
+      [
+        2,
+        0,
+        -1,
+        -1
+      ],
+      [
+        0,
+        2,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        2,
+        0
+      ],
+      [
+        -1,
+        -1,
+        0,
+        2
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0431",
+    "matrix": [
+      [
+        2,
+        0,
+        -1,
+        -1
+      ],
+      [
+        0,
+        2,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        3,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        -1,
+        3
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0432",
+    "matrix": [
+      [
+        1,
+        -1,
+        0,
+        0
+      ],
+      [
+        -1,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "0433",
+    "matrix": [
+      [
+        1,
+        -1,
+        0,
+        0
+      ],
+      [
+        -1,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        0,
+        -1,
+        1
+      ]
+    ],
+    "controllability": "completely uncontrollable (degenerate)"
+  },
+  {
+    "id": "0434",
+    "matrix": [
+      [
+        1,
+        -1,
+        0,
+        0
+      ],
+      [
+        -1,
+        2,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        1
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "0435",
+    "matrix": [
+      [
+        1,
+        -1,
+        0,
+        0
+      ],
+      [
+        -1,
+        2,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        -1,
+        2
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0436",
+    "matrix": [
+      [
+        1,
+        -1,
+        0,
+        0
+      ],
+      [
+        -1,
+        2,
+        -1,
+        0
+      ],
+      [
+        0,
+        -1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "0437",
+    "matrix": [
+      [
+        1,
+        -1,
+        0,
+        0
+      ],
+      [
+        -1,
+        2,
+        -1,
+        0
+      ],
+      [
+        0,
+        -1,
+        2,
+        -1
+      ],
+      [
+        0,
+        0,
+        -1,
+        1
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0438",
+    "matrix": [
+      [
+        1,
+        -1,
+        0,
+        0
+      ],
+      [
+        -1,
+        3,
+        -1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        1,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        1
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0439",
+    "matrix": [
+      [
+        1,
+        -1,
+        0,
+        0
+      ],
+      [
+        -1,
+        3,
+        -1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        2,
+        -1
+      ],
+      [
+        0,
+        -1,
+        -1,
+        2
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0440",
+    "matrix": [
+      [
+        2,
+        -1,
+        0,
+        -1
+      ],
+      [
+        -1,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        0,
+        1
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "0441",
+    "matrix": [
+      [
+        2,
+        -1,
+        0,
+        -1
+      ],
+      [
+        -1,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        -1
+      ],
+      [
+        -1,
+        0,
+        -1,
+        2
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0442",
+    "matrix": [
+      [
+        2,
+        -1,
+        0,
+        -1
+      ],
+      [
+        -1,
+        2,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        -1,
+        -1,
+        0,
+        2
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "0443",
+    "matrix": [
+      [
+        2,
+        -1,
+        0,
+        -1
+      ],
+      [
+        -1,
+        2,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        1,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        -1,
+        3
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0444",
+    "matrix": [
+      [
+        2,
+        -1,
+        0,
+        -1
+      ],
+      [
+        -1,
+        2,
+        -1,
+        0
+      ],
+      [
+        0,
+        -1,
+        1,
+        0
+      ],
+      [
+        -1,
+        0,
+        0,
+        1
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0445",
+    "matrix": [
+      [
+        2,
+        -1,
+        0,
+        -1
+      ],
+      [
+        -1,
+        2,
+        -1,
+        0
+      ],
+      [
+        0,
+        -1,
+        2,
+        -1
+      ],
+      [
+        -1,
+        0,
+        -1,
+        2
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0446",
+    "matrix": [
+      [
+        2,
+        -1,
+        0,
+        -1
+      ],
+      [
+        -1,
+        3,
+        -1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        1,
+        0
+      ],
+      [
+        -1,
+        -1,
+        0,
+        2
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0447",
+    "matrix": [
+      [
+        2,
+        -1,
+        0,
+        -1
+      ],
+      [
+        -1,
+        3,
+        -1,
+        -1
+      ],
+      [
+        0,
+        -1,
+        2,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        -1,
+        3
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0448",
+    "matrix": [
+      [
+        2,
+        -1,
+        -1,
+        0
+      ],
+      [
+        -1,
+        1,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "0449",
+    "matrix": [
+      [
+        2,
+        -1,
+        -1,
+        0
+      ],
+      [
+        -1,
+        1,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        2,
+        -1
+      ],
+      [
+        0,
+        0,
+        -1,
+        1
+      ]
+    ],
+    "controllability": "essentially controllable"
+  },
+  {
+    "id": "0450",
+    "matrix": [
+      [
+        2,
+        -1,
+        -1,
+        0
+      ],
+      [
+        -1,
+        2,
+        0,
+        -1
+      ],
+      [
+        -1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        1
+      ]
+    ],
+    "controllability": "essentially controllable"
+  },
+  {
+    "id": "0451",
+    "matrix": [
+      [
+        2,
+        -1,
+        -1,
+        0
+      ],
+      [
+        -1,
+        2,
+        0,
+        -1
+      ],
+      [
+        -1,
+        0,
+        2,
+        -1
+      ],
+      [
+        0,
+        -1,
+        -1,
+        2
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0452",
+    "matrix": [
+      [
+        2,
+        -1,
+        -1,
+        0
+      ],
+      [
+        -1,
+        2,
+        -1,
+        0
+      ],
+      [
+        -1,
+        -1,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "controllability": "completely uncontrollable (disconnected)"
+  },
+  {
+    "id": "0453",
+    "matrix": [
+      [
+        2,
+        -1,
+        -1,
+        0
+      ],
+      [
+        -1,
+        2,
+        -1,
+        0
+      ],
+      [
+        -1,
+        -1,
+        3,
+        -1
+      ],
+      [
+        0,
+        0,
+        -1,
+        1
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0454",
+    "matrix": [
+      [
+        2,
+        -1,
+        -1,
+        0
+      ],
+      [
+        -1,
+        3,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        2,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        1
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0455",
+    "matrix": [
+      [
+        2,
+        -1,
+        -1,
+        0
+      ],
+      [
+        -1,
+        3,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        3,
+        -1
+      ],
+      [
+        0,
+        -1,
+        -1,
+        2
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0456",
+    "matrix": [
+      [
+        3,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        1,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        1,
+        0
+      ],
+      [
+        -1,
+        0,
+        0,
+        1
+      ]
+    ],
+    "controllability": "completely uncontrollable (degenerate)"
+  },
+  {
+    "id": "0457",
+    "matrix": [
+      [
+        3,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        1,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        2,
+        -1
+      ],
+      [
+        -1,
+        0,
+        -1,
+        2
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0458",
+    "matrix": [
+      [
+        3,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        2,
+        0,
+        -1
+      ],
+      [
+        -1,
+        0,
+        1,
+        0
+      ],
+      [
+        -1,
+        -1,
+        0,
+        2
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0459",
+    "matrix": [
+      [
+        3,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        2,
+        0,
+        -1
+      ],
+      [
+        -1,
+        0,
+        2,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        -1,
+        3
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0460",
+    "matrix": [
+      [
+        3,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        2,
+        -1,
+        0
+      ],
+      [
+        -1,
+        -1,
+        2,
+        0
+      ],
+      [
+        -1,
+        0,
+        0,
+        1
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  },
+  {
+    "id": "0461",
+    "matrix": [
+      [
+        3,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        2,
+        -1,
+        0
+      ],
+      [
+        -1,
+        -1,
+        3,
+        -1
+      ],
+      [
+        -1,
+        0,
+        -1,
+        2
+      ]
+    ],
+    "controllability": "completely uncontrollable (degenerate)"
+  },
+  {
+    "id": "0462",
+    "matrix": [
+      [
+        3,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        3,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        2,
+        0
+      ],
+      [
+        -1,
+        -1,
+        0,
+        2
+      ]
+    ],
+    "controllability": "conditionally controllable"
+  }
+]

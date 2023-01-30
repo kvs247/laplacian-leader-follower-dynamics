@@ -1,3 +1,6 @@
-mystr = 'hi'
+import numpy as np
 
-print(mystr.rjust(2, '0'))
+myArr = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+x = myArr.flatten().astype(str)
+print(''.join(x))

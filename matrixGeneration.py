@@ -47,7 +47,11 @@ def getAllLaplacianMatrices(dim):
     numElementsAboveDiag = int((dim / 2) * (dim - 1)) # explain
     numMatricesTotal = int((2 ** numElementsAboveDiag) - 2)
     allBinaryVectors = matrixMath.getBinaryVectors(numElementsAboveDiag)
+
+    k = 1
+    total = np.shape(allBinaryVectors)[0]
     for elements in allBinaryVectors:
+        print(f' generating matrices: {(int(k/total * 10000))/100}', end='\r')
         tempMatrixFlat = np.array([])
         for rowNumber in range(1, dim + 1):
             row = elements[0:dim - rowNumber]
@@ -62,7 +66,12 @@ def getAllLaplacianMatrices(dim):
             tempMatrix[i][i] -= rowSum
         tempMatrixFlat = -tempMatrix.flatten()
         result = np.append(result, tempMatrixFlat).astype(int)
+        
+        k += 1
+    print('')
     result = np.reshape(result, (numMatricesTotal, dim, dim))
     return result
+
+# getAllLaplacianMatrices(6)
 
 

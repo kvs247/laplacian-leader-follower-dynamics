@@ -33,7 +33,7 @@ print('')
 print('done')
 prettyPrintData = pprint.pformat(data).replace("'", '"')
 # print([value for index, value in enumerate(data) if value['id'] == '05224'])
-with open(f'data-{dim}.json', 'w') as f:
+with open(f'data/data-{dim}.json', 'w') as f:
     json.dump(data, f, indent=2)
 
 # with open('data-3.json', 'r') as f:

@@ -1,4 +1,4 @@
-# import matrixMath
+import matrixMath
 import numpy as np
 
 # for i, j indexing a matrices rows and columns, returns 0 for elements on or below diagonal and either 1 or 0 at random for elements above the diagonal
@@ -33,3 +33,30 @@ def generateLaplacianMatrix(dim):
         i += 1
 
     return -adjacencyMatrix
+
+# add padding
+def padding(arr, dim):
+    while arr.size < dim:
+        arr = np.append([0], arr)
+    return arr
+# print(padding(np.array([1,2,3]), 7))
+
+# generate all Laplacians matrice for given dimension
+def getAllLaplacianMatrices(dim):
+    result = np.array([])
+    numElementsAboveDiag = (dim / 2) * (dim - 1) # explain
+    numMatricesTotal = int(2 ** numElementsAboveDiag - 2)
+    allBinaryVectors = matrixMath.getBinaryVectors(dim)
+    for elements in allBinaryVectors:
+        tempMatrix = np.array([])
+        for rowNumber in range(1, dim + 1):
+            row = elements[0:dim - rowNumber]
+            elements = elements[dim - rowNumber:]
+            row = padding(row, dim)
+            tempMatrix = np.append(tempMatrix, row)
+        result = np.append(result, tempMatrix).astype(int)
+    result = np.reshape(result, (numMatricesTotal, dim, dim))
+    return result
+
+x = getAllLaplacianMatrices(3)
+print(x)

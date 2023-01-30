@@ -25,7 +25,7 @@ def printMatrix(matrix):
 
 # get 2D array containing all binary vectors for the given dimension as an array
 # note: this does not include the zero vector or all 1s vector
-def getControlSet(dim):
+def getBinaryVectors(dim):
     result = []
     for i in range(1, (2 ** dim) - 1):
         binaryString = bin(i)[2:].rjust(dim, '0')
@@ -45,7 +45,7 @@ def getEigenState(matrix):
 # determine controllability class of given matrix
 def pbhTest(matrix, eigenValues, eigenVectors):
     n = np.shape(matrix)[0]
-    controlSet = getControlSet(n)
+    controlSet = getBinaryVectors(n)
     zeroCount = 0
 
     if eigenValues.size != np.unique(eigenValues).size:

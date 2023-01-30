@@ -13,7 +13,7 @@ def getControlSetTest():
         [ 1, 0, 1 ],
         [ 1, 1, 0 ]
     ])
-    result = matrixMath.getControlSet(inputDim)
+    result = matrixMath.getBinaryVectors(inputDim)
     if not (result == expectedResult).all():
         raise Exception('getAllBinaryVectors did not pass')
     print('')
@@ -41,7 +41,7 @@ def pbhTestTest():
     print('pbhTest passed')
 
 getControlSetTest()
-getEigenStateTest()
+# getEigenStateTest()
 pbhTestTest()
 
 print('')

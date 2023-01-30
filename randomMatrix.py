@@ -1,4 +1,4 @@
-import matrixMath
+# import matrixMath
 import numpy as np
 
 # for i, j indexing a matrices rows and columns, returns 0 for elements on or below diagonal and either 1 or 0 at random for elements above the diagonal

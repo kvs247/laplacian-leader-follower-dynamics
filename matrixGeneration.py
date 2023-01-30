@@ -44,19 +44,25 @@ def padding(arr, dim):
 # generate all Laplacians matrice for given dimension
 def getAllLaplacianMatrices(dim):
     result = np.array([])
-    numElementsAboveDiag = (dim / 2) * (dim - 1) # explain
-    numMatricesTotal = int(2 ** numElementsAboveDiag - 2)
-    allBinaryVectors = matrixMath.getBinaryVectors(dim)
+    numElementsAboveDiag = int((dim / 2) * (dim - 1)) # explain
+    numMatricesTotal = int((2 ** numElementsAboveDiag) - 2)
+    allBinaryVectors = matrixMath.getBinaryVectors(numElementsAboveDiag)
     for elements in allBinaryVectors:
-        tempMatrix = np.array([])
+        tempMatrixFlat = np.array([])
         for rowNumber in range(1, dim + 1):
             row = elements[0:dim - rowNumber]
             elements = elements[dim - rowNumber:]
             row = padding(row, dim)
-            tempMatrix = np.append(tempMatrix, row)
-        result = np.append(result, tempMatrix).astype(int)
+            tempMatrixFlat = np.append(tempMatrixFlat, row)
+        tempMatrix = np.reshape(tempMatrixFlat, (dim, dim))
+        tempMatrixTranspose = np.transpose(tempMatrix)
+        tempMatrix = tempMatrix + tempMatrixTranspose
+        for i in range(dim):
+            rowSum = np.sum(tempMatrix[i])
+            tempMatrix[i][i] -= rowSum
+        tempMatrixFlat = -tempMatrix.flatten()
+        result = np.append(result, tempMatrixFlat).astype(int)
     result = np.reshape(result, (numMatricesTotal, dim, dim))
     return result
 
-x = getAllLaplacianMatrices(3)
-print(x)
+

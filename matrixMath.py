@@ -48,6 +48,9 @@ def pbhTest(matrix, eigenValues, eigenVectors):
     controlSet = getBinaryVectors(n)
     zeroCount = 0
 
+    if 0 in matrix.diagonal():
+        return 'completely uncontrollable (disconnected)'
+
     if eigenValues.size != np.unique(eigenValues).size:
         return 'completely uncontrollable (degenerate)'
 

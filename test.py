@@ -1,7 +1,3 @@
-import numpy as np
+mystr = 'hi'
 
-arr = np.array([1,2,3,4]).astype(str)
-
-str = ''
-
-print(str.join(arr))
+print(mystr.rjust(2, '0'))

@@ -18,13 +18,13 @@ def visualize_graph(matrix):
     plt.savefig('graph.png')
 
 
-# id = '07180207'
-# matrix = matrixGeneration.getLaplacianFromId(id)
-# [evals, evecs] = matrixMath.getEigenState(matrix)
-# matrixMath.printMatrix(matrix)
-# # print(evals)
-# # print(evals.size)
-# # print(np.unique(evals).size)
-# # print(evecs)
-# print(matrixMath.pbhTest(matrix, evals, evecs))
-# # visualize_graph(matrix)
+id = '07310660'
+matrix = matrixGeneration.getLaplacianFromId(id)
+[evals, evecs] = matrixMath.getEigenState(matrix)
+matrixMath.printMatrix(matrix)
+print(evals)
+# print(evals.size)
+# print(np.unique(evals).size)
+# print(evecs)
+print(matrixMath.pbhTest(matrix, evals, evecs))
+visualize_graph(matrix)

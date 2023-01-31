@@ -55,13 +55,15 @@ def pbhTest(matrix, eigenValues, eigenVectors):
     if degenerateTest(eigenValues):
         return 'completely uncontrollable (degenerate)'
 
+    count = 0
     for controlVector in controlSet:
         for eigenVector in eigenVectors:
             innerProduct = np.dot(controlVector, eigenVector)
             if (innerProduct == 0):
                 zeroCount += 1
+            count += 1
 
-    if zeroCount == (2 ** n) - 2:
+    if zeroCount == n * ((2 ** n) - 2):
         return 'completely uncontrollable (nondegenerate)'
     elif zeroCount == 0:
         return 'essentially controllable'

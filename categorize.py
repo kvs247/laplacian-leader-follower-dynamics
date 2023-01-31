@@ -59,5 +59,8 @@ def calculate(dim, filepath = None):
 path5 = '/home/kyle/code/laplacian-leader-follower-dynamics/data/laplacian5-20230131083831.txt'
 path6 = '/home/kyle/code/laplacian-leader-follower-dynamics/data/laplacian6-20230131084518.txt'
 path7 = None
-calculate(7, path7)
 
+startTime = datetime.datetime.now()
+calculate(7)
+print('Done')
+print(f'Execution time: {datetime.datetime.now() - startTime}')

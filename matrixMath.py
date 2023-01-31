@@ -15,6 +15,15 @@ def printMatrix(matrix):
         print(row)
     print('')
 
+# returns true if any pair of values within the array are within 1e-10 of each other
+def degenerateTest(eigenValues):
+    dim = np.shape(eigenValues)[0]
+    for i in range(dim):
+        for j in range(i+1, dim):
+            if abs(eigenValues[i] - eigenValues[j]) < 1e-10:
+                return True
+    return False
+
 # get 2D array containing all binary vectors for the given dimension as an array
 # note: this does not include the zero vector or all 1s vector
 def getBinaryVectors(dim):
@@ -43,7 +52,7 @@ def pbhTest(matrix, eigenValues, eigenVectors):
     if 0 in matrix.diagonal():
         return 'completely uncontrollable (disconnected)'
 
-    if eigenValues.size != np.unique(eigenValues).size:
+    if degenerateTest(eigenValues):
         return 'completely uncontrollable (degenerate)'
 
     for controlVector in controlSet:

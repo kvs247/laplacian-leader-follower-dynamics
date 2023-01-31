@@ -11,7 +11,7 @@ def calculate(dim, filepath = None):
     if not filepath:
         start = 1
         # create new filee
-        date = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+        date = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
         filepath = f'data/laplacian{dim}-{date}.txt'
         with open(filepath, 'a') as f:
             f.write('[')
@@ -58,6 +58,6 @@ def calculate(dim, filepath = None):
     
 path5 = '/home/kyle/code/laplacian-leader-follower-dynamics/data/laplacian5-20230131083831.txt'
 path6 = '/home/kyle/code/laplacian-leader-follower-dynamics/data/laplacian6-20230131084518.txt'
-path7 = '/home/kyle/code/laplacian-leader-follower-dynamics/data/laplacian7-20230131085525.txt'
+path7 = None
 calculate(7, path7)
 

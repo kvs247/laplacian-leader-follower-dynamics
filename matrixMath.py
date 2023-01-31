@@ -1,20 +1,12 @@
 import numpy as np
 
-# might not need?
-# def zeroFloatCorrection(x):
-#     print(abs(x))
-#     if abs(x) < 1e-10:
-#         return 0
-#     else:
-#         return x
-
 def printMatrix(matrix):
     n = np.shape(matrix)[0]
     print('')
     for i in range(n):
         row = '|'
         for j in range(n):
-            value = matrix[i][j]
+            value = int(matrix[i][j])
             if value < 0:
                 row += f' {value}' # one space
             else:

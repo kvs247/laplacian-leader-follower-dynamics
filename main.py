@@ -65,5 +65,6 @@ def calculate(dim, filepath = None):
     
 path5 = '/home/kyle/code/laplacian-leader-follower-dynamics/data/laplacian5-20230131083831.txt'
 path6 = '/home/kyle/code/laplacian-leader-follower-dynamics/data/laplacian6-20230131084518.txt'
-calculate(6, path6)
+path7 = '/home/kyle/code/laplacian-leader-follower-dynamics/data/laplacian7-20230131085525.txt'
+calculate(7, path7)
 

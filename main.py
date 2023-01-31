@@ -4,6 +4,8 @@ import numpy as np
 import matrixGeneration
 import matrixMath
 
+import sys
+
 # dim = 3
 
 # print(numMatrices)
@@ -12,14 +14,20 @@ def calculate(dim, filepath = None):
     numMatrices = int((2 ** int((dim / 2) * (dim - 1))) - 2) # (dim / 2) * (dim - 1) elements in matrix triangle
     id_dim = str(dim).rjust(2, '0')
     if not filepath:
+        start = 1
+        # create new filee
         date = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
         filepath = f'data/laplacian{dim}-{date}.txt'
-        start = 1
         with open(filepath, 'a') as f:
             f.write('[')
     else:
         with open(filepath, 'r') as f:
-            data = np.array(json.load(f))
+            data = f.read()
+            # recognize and process incomplete data
+            if not data.endswith(']'):
+                data += ']'
+            data = np.array(eval(data))
+
             matrixGenerators = np.array([dataObj['id'][2:] for dataObj in data]).astype(int)
             start = np.max(matrixGenerators) + 1
             if start > numMatrices:
@@ -55,6 +63,7 @@ def calculate(dim, filepath = None):
         f.write(']')
 
     
-
-calculate(5)
+path5 = '/home/kyle/code/laplacian-leader-follower-dynamics/data/laplacian5-20230131083831.txt'
+path6 = '/home/kyle/code/laplacian-leader-follower-dynamics/data/laplacian6-20230131084518.txt'
+calculate(6, path6)
 

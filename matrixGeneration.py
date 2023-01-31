@@ -72,6 +72,34 @@ def getAllLaplacianMatrices(dim):
     result = np.reshape(result, (numMatricesTotal, dim, dim))
     return result
 
-# getAllLaplacianMatrices(6)
+# print(getAllLaplacianMatrices(3))
+
+def getLaplacianFromId(id):
+    dim = int(id[0:2])
+    generator = int(id[2:])
+    numElementsAboveDiag = int((dim / 2) * (dim - 1)) # explain
+    elements = bin(generator)[2:].rjust(numElementsAboveDiag, '0')
+    elements = np.array(list(elements)).astype(int)
+
+    tempArray = np.array([])
+    for rowNumber in range(1, dim+1):
+        row = elements[0:dim - rowNumber]
+        row = padding(row, dim)
+        tempArray = np.append(tempArray, row)
+        elements = elements[dim - rowNumber:]
+    tempArray = np.reshape(tempArray, (dim, dim))
+    tempArrayTranspose = np.transpose(tempArray)
+
+    result = -(tempArray + tempArrayTranspose)
+
+    for i in range(0, dim):
+        result[i][i] = -np.sum(result[i])
+
+    return result
+
+
+    
+
+
 
 

@@ -1,6 +1,7 @@
-import numpy as np
+path = '/home/kyle/code/laplacian-leader-follower-dynamics/data/laplacian3-20230131083052.txt'
 
-myArr = np.array([[1,2,3],[4,5,6],[7,8,9]])
+with open(path) as f:
+    data = f.read()
 
-x = myArr.flatten().astype(str)
-print(''.join(x))
+data = np.array(eval(data))
+print(type(data))

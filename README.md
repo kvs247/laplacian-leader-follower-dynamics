@@ -1,5 +1,3 @@
-# laplacian-leader-follower-dynamics
-
 # Laplacian Leader Follower Dynamics
 
 K. Schneider

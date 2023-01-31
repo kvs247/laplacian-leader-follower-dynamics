@@ -61,6 +61,6 @@ path6 = '/home/kyle/code/laplacian-leader-follower-dynamics/data/laplacian6-2023
 path7 = None
 
 startTime = datetime.datetime.now()
-calculate(7)
+calculate(8)
 print('Done')
 print(f'Execution time: {datetime.datetime.now() - startTime}')

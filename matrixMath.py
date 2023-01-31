@@ -52,23 +52,29 @@ def pbhTest(matrix, eigenValues, eigenVectors):
     if hasRepeatedValue(eigenValues):
         return 'completely uncontrollable (degenerate)'
 
-    n = np.shape(matrix)[0]
-    controlSet = getBinaryVectors(n)
+    dim = np.shape(matrix)[0]
     zeroCount = 0
+    nonZeroCount = 0
 
-    for controlVector in controlSet:
+    for i in range(1, (2 ** dim) - 1):
+        binaryString = bin(i)[2:].rjust(dim, '0')
+        controlVector = np.array(list(binaryString)).astype(int)
         for eigenVector in eigenVectors:
             innerProduct = np.dot(controlVector, eigenVector)
             if (innerProduct == 0):
                 zeroCount += 1
+            else:
+                nonZeroCount += 1
+            
+            if (zeroCount > 0 and nonZeroCount > 0):
+                return 'conditionally controllable'
 
-    if zeroCount == n * ((2 ** n) - 2):
+    if zeroCount == dim * ((2 ** dim) - 2):
         return 'completely uncontrollable (nondegenerate)'
     elif zeroCount == 0:
         return 'essentially controllable'
     else:
-        return 'conditionally controllable'
-
+        print('error, no controllability class found')
 
 
 

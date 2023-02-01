@@ -56,20 +56,29 @@ def pbhTest(matrix, eigenValues, eigenVectors):
     uncontrollablePairs = 0
     controllablePairs = 0
 
+    goToNext = False
     for i in range(1, (2 ** dim) - 1):
         binaryString = bin(i)[2:].rjust(dim, '0')
         controlVector = np.array(list(binaryString)).astype(int)
+
+        nonZeroPairs = 0
         for eigenVector in eigenVectors:
+            if goToNext:
+                goToNext = False
             innerProduct = np.dot(controlVector, eigenVector)
-            if (innerProduct == 0):
+            if (abs(innerProduct) < 1e-10):
                 uncontrollablePairs += 1
+                goToNext = True
                 break
+            else:
+                nonZeroPairs += 1
+        if nonZeroPairs == dim:
+            controllablePairs += 1
             
         if (uncontrollablePairs > 0 and controllablePairs > 0):
             return 'conditionally controllable'
 
-    print(uncontrollablePairs, controllablePairs)
-    if uncontrollablePairs == dim * ((2 ** dim) - 2):
+    if uncontrollablePairs == (2 ** dim) - 2:
         return 'completely uncontrollable (nondegenerate)'
     elif uncontrollablePairs == 0:
         return 'essentially controllable'

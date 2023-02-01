@@ -18,11 +18,22 @@ def visualize_graph(matrix):
     plt.savefig('graph.png')
 
 
-id = '07310660'
-matrix = matrixGeneration.getLaplacianFromId(id)
+id = '0427'
+# matrix = matrixGeneration.getLaplacianFromId(id)
+matrix = [
+    [2,-1,-1,0,0,0,0,0],
+    [-1,2,-1,0,0,0,0,0],
+    [-1,-1,4,-1,-1,0,0,0],
+    [0,0,-1,2,0,-1,0,0],
+    [0,0,-1,0,2,-1,0,0],
+    [0,0,0,-1,-1,4,-1,-1],
+    [0,0,0,0,0,-1,1,0],
+    [0,0,0,0,0,-1,0,1]
+]
+# matrix = matrixGeneration.generateLaplacianMatrix(4)
 [evals, evecs] = matrixMath.getEigenState(matrix)
 matrixMath.printMatrix(matrix)
-print(evals)
+# print(evals)
 # print(evals.size)
 # print(np.unique(evals).size)
 # print(evecs)

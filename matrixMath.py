@@ -53,8 +53,8 @@ def pbhTest(matrix, eigenValues, eigenVectors):
         return 'completely uncontrollable (degenerate)'
 
     dim = np.shape(matrix)[0]
-    zeroCount = 0
-    nonZeroCount = 0
+    uncontrollablePairs = 0
+    controllablePairs = 0
 
     for i in range(1, (2 ** dim) - 1):
         binaryString = bin(i)[2:].rjust(dim, '0')
@@ -62,16 +62,16 @@ def pbhTest(matrix, eigenValues, eigenVectors):
         for eigenVector in eigenVectors:
             innerProduct = np.dot(controlVector, eigenVector)
             if (innerProduct == 0):
-                zeroCount += 1
-            else:
-                nonZeroCount += 1
+                uncontrollablePairs += 1
+                break
             
-            if (zeroCount > 0 and nonZeroCount > 0):
-                return 'conditionally controllable'
+        if (uncontrollablePairs > 0 and controllablePairs > 0):
+            return 'conditionally controllable'
 
-    if zeroCount == dim * ((2 ** dim) - 2):
+    print(uncontrollablePairs, controllablePairs)
+    if uncontrollablePairs == dim * ((2 ** dim) - 2):
         return 'completely uncontrollable (nondegenerate)'
-    elif zeroCount == 0:
+    elif uncontrollablePairs == 0:
         return 'essentially controllable'
     else:
         print('error, no controllability class found')

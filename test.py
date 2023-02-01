@@ -1,7 +1,7 @@
-path = '/home/kyle/code/laplacian-leader-follower-dynamics/data/laplacian3-20230131083052.txt'
+import numpy as np
 
-with open(path) as f:
-    data = f.read()
+a = np.array([1, 2, 0, 0])
 
-data = np.array(eval(data))
-print(type(data))
+print(len(np.where(a == 0)[0]))
+
+print(np.delete(a, 0))

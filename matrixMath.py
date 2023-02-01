@@ -16,7 +16,7 @@ def printMatrix(matrix):
     print('')
 
 # returns true if any pair of values within the array are within 1e-10 of each other
-def degenerateTest(eigenValues):
+def hasRepeatedValue(eigenValues):
     dim = np.shape(eigenValues)[0]
     for i in range(dim):
         for j in range(i+1, dim):
@@ -45,31 +45,36 @@ def getEigenState(matrix):
 
 # determine controllability class of given matrix
 def pbhTest(matrix, eigenValues, eigenVectors):
-    n = np.shape(matrix)[0]
-    controlSet = getBinaryVectors(n)
-    zeroCount = 0
 
-    if 0 in matrix.diagonal():
+    if len(np.where(eigenValues == 0)[0]) > 1:
         return 'completely uncontrollable (disconnected)'
 
-    if degenerateTest(eigenValues):
+    if hasRepeatedValue(eigenValues):
         return 'completely uncontrollable (degenerate)'
 
-    count = 0
-    for controlVector in controlSet:
+    dim = np.shape(matrix)[0]
+    uncontrollablePairs = 0
+    controllablePairs = 0
+
+    for i in range(1, (2 ** dim) - 1):
+        binaryString = bin(i)[2:].rjust(dim, '0')
+        controlVector = np.array(list(binaryString)).astype(int)
         for eigenVector in eigenVectors:
             innerProduct = np.dot(controlVector, eigenVector)
             if (innerProduct == 0):
-                zeroCount += 1
-            count += 1
+                uncontrollablePairs += 1
+                break
+            
+        if (uncontrollablePairs > 0 and controllablePairs > 0):
+            return 'conditionally controllable'
 
-    if zeroCount == n * ((2 ** n) - 2):
+    print(uncontrollablePairs, controllablePairs)
+    if uncontrollablePairs == dim * ((2 ** dim) - 2):
         return 'completely uncontrollable (nondegenerate)'
-    elif zeroCount == 0:
+    elif uncontrollablePairs == 0:
         return 'essentially controllable'
     else:
-        return 'conditionally controllable'
-
+        print('error, no controllability class found')
 
 
 

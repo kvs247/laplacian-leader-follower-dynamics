@@ -3,7 +3,7 @@ import numpy as np
 import matrixGeneration
 import matrixMath
 
-def calculate(dim, filepath = None):
+def categorize(dim, filepath = None):
     numMatrices = int((2 ** int((dim / 2) * (dim - 1))) - 2) # (dim / 2) * (dim - 1) elements in matrix triangle
     id_dim = str(dim).rjust(2, '0')
 
@@ -35,6 +35,10 @@ def calculate(dim, filepath = None):
         [eigenValues, eigenVectors] = matrixMath.getEigenState(matrix)
         controlClass = matrixMath.pbhTest(matrix, eigenValues, eigenVectors)
 
+        # matrixMath.printMatrix(matrix)
+        # print(eigenValues)
+        # print(controlClass)
+
         if controlClass == 'essentially controllable':
             dataControlClass = 'EC'
         if controlClass == 'conditionally controllable':
@@ -61,6 +65,6 @@ path6 = '/home/kyle/code/laplacian-leader-follower-dynamics/data/laplacian6-2023
 path7 = None
 
 startTime = datetime.datetime.now()
-calculate(8)
+categorize(6)
 print('Done')
 print(f'Execution time: {datetime.datetime.now() - startTime}')

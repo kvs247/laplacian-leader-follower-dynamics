@@ -1,11 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-path3 = 'data/laplacian3-20230131-115435.txt'
-path4 = 'data/laplacian4-20230131-115442.txt'
-path5 = 'data/laplacian5-20230131-115446.txt'
-path6 = 'data/laplacian6-20230131-115459.txt'
-path7 = 'data/laplacian7-20230131-115545.txt'
+path3 = 'data/v1-20230131/laplacian3-20230131-115435.txt'
+path4 = 'data/v1-20230131/laplacian4-20230131-115442.txt'
+path5 = 'data/v1-20230131/laplacian5-20230131-115446.txt'
+path6 = 'data/v1-20230131/laplacian6-20230131-115459.txt'
+path7 = 'data/v1-20230131/laplacian7-20230131-115545.txt'
 
 numMats3 = (2 ** ((3 / 2) * (3 - 1))) - 2
 numMats4 = (2 ** ((4 / 2) * (4 - 1))) - 2

@@ -24,12 +24,24 @@ The second iteration reorganized the process so that a matrix is generated, cont
 
 In the current state (1/31), the algorithm has the following performance:
 
-dim 5: 0.5 s
+dim 5: 0.5 sec
 
-dim 6: 30 s
+dim 6: 30 sec
 
 dim 7: 1.15 hr
 
 dim 8: likely >100 hr
 
-We would love to add efficiency to love algorithm so we might be able to process more matrices.
+We would love to add efficiency to algorithm so we might be able to process more matrices.
+
+### 4 Algorithm Speed Improvment 
+
+Reorganized and reordered steps PBH Test for more efficient process. This made algorithm about 2x faster. New times: 
+
+dim 5: 0.27 sec
+
+dim 6: 13 sec
+
+dim 7: 28 min
+
+dim 8: likely >100 hr

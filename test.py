@@ -1,7 +1,3 @@
-import numpy as np
+import os
 
-a = np.array([1, 2, 0, 0])
-
-print(len(np.where(a == 0)[0]))
-
-print(np.delete(a, 0))
+print(os.path.basename('/home/kyle/code/laplacian-leader-follower-dynamics/data/laplacian6-20230206-082938'))

@@ -1,3 +1,6 @@
 import os
+string = 'data/laplacian7-20230206-102507/laplacian7-3.txt'
 
-print(os.path.basename('/home/kyle/code/laplacian-leader-follower-dynamics/data/laplacian6-20230206-082938'))
+x = int(os.path.basename(string).split('.')[0].split('-')[1])
+
+print(x)

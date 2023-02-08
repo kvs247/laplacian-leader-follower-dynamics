@@ -1,7 +1,3 @@
-lst1 = [1, 2, 3]
+mystr = '08-2133236'
 
-lst2 = [2, 0, -10]
-
-lst3 = [sum(x) for x in zip(lst1, lst2)]
-
-print(lst3)
+print(mystr[0:2] + mystr[3:])

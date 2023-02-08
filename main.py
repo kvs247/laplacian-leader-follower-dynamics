@@ -18,7 +18,7 @@ def visualize_graph(matrix):
     plt.savefig('graph.png')
 
 
-id = '082929257'
+id = '082133405'
 matrix = matrixGeneration.getLaplacianFromId(id)
 # matrix = [
 #     [2,-1,-1,0,0,0,0,0],

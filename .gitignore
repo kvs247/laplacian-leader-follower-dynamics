@@ -1,2 +1,5 @@
 # Ignore data
 data
+
+# Ignore graph png's
+grphs8

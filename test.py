@@ -1,6 +1,7 @@
-import os
-string = 'data/laplacian7-20230206-102507/laplacian7-3.txt'
+lst1 = [1, 2, 3]
 
-x = int(os.path.basename(string).split('.')[0].split('-')[1])
+lst2 = [2, 0, -10]
 
-print(x)
+lst3 = [sum(x) for x in zip(lst1, lst2)]
+
+print(lst3)

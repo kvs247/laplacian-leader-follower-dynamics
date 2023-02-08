@@ -89,8 +89,8 @@ def categorize(dim, directory = None):
         fileNumber += 1
 
 startTime = datetime.datetime.now()
-categorize(8, "data/laplacian8-20230206-114814")
-# categorize(8)
+# categorize(8, "data/laplacian8-20230206-114814")
+categorize(3)
 print('Done')
 print(f'Execution time: {datetime.datetime.now() - startTime}')
 

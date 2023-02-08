@@ -3,3 +3,6 @@ data
 
 # Ignore graph png's
 graphs/
+
+# Ignore cached Python
+__pycache__/

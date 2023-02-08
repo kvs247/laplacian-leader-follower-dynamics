@@ -14,7 +14,7 @@ def visualize_graph(id):
             if matrix[i][j] == -1:
                 g.add_edge(i,j)
     nx.draw(g)
-    plt.savefig(f'graphs8/{id}.png')
+    plt.savefig(f'graphs/dim8/{id}.png')
     plt.close()
 
 filepath = 'data.txt'

@@ -4,7 +4,7 @@ import os
 
 data = []
 
-filepath = 'data/v2/laplacian8-test'
+filepath = 'data/v2-20230212/laplacian8-20230206-114814'
 files = glob.glob(f'{filepath}/*.txt')
 files.sort(key = lambda x: int(os.path.basename(x).split('.')[0].split('-')[1]))
 for file in files:

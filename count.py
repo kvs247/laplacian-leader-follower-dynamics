@@ -16,7 +16,7 @@ data = dict({
     'CU-nondegen': 0
 })
 
-dataDir = 'data/v2/laplacian8-test'
+dataDir = 'data/v2-20230212/laplacian8-20230206-114814'
 files = glob.glob(f'{dataDir}/*.txt')
 files.sort(key = lambda x: int(os.path.basename(x).split('.')[0].split('-')[1]))
 for file in files:

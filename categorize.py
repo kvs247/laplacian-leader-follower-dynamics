@@ -1,3 +1,9 @@
+'''
+Calculates controllability class for all graphs of given dimension. 
+The function categorize takes two arguments: the dimension, and the filepath if continuing a run 
+    (optional: will create a new file if blank)
+'''
+
 import datetime
 import glob
 import numpy as np
@@ -7,7 +13,7 @@ import sys
 import matrixGeneration
 import matrixMath
 
-controllabilityDict = {
+controllability_dict = {
     "essentially controllable": "EC",
     "conditionally controllable": "CC",
     "completely uncontrollable (disconnected)": "CU-dis",
@@ -16,82 +22,81 @@ controllabilityDict = {
 }
 
 def categorize(dim, directory = None):
-    numMatrices = int((2 ** int((dim / 2) * (dim - 1)))) # (dim / 2) * (dim - 1) elements in matrix triangle
-    matricesPerFile = 1e6  # IMPORTANT
-    numFiles = int(numMatrices / matricesPerFile)
+    matrices_per_file = 1e6  # IMPORTANT
+    num_matrices = int((2 ** int((dim / 2) * (dim - 1)))) # (dim / 2) * (dim - 1) elements in matrix triangle
+    num_files = int(num_matrices / matrices_per_file)
     id_dim = str(dim).rjust(2, '0')
     
-    # setup starting place
     # new run
     if not directory:
         start = 0
-        fileNumber = 0
+        file_number = 0
         continuing = False
-        # create new dir
         date = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-        dirpath = f'data/laplacian{dim}-{date}'
-        if not os.path.exists(dirpath):
-            os.mkdir(dirpath)
-    # continuing run        
+        dir_path = f'data/laplacian{dim}-{date}'
+        if not os.path.exists(dir_path):
+            os.mkdir(dir_path)
+
+    # continuing run - ASSUMES PROGRAM STOPPED MID FILE    
     else:
+        print(" finding starting point...")
         files = glob.glob(f'{directory}/*.txt')
         files.sort(key = lambda x: int(os.path.basename(x).split('.')[0].split('-')[1]))
-        lastFile = files[-1]
-        print(" finding starting point...")
-        with open(lastFile, 'r') as f:
+        last_file = files[-1]
+        with open(last_file, 'r') as f:
             data = f.read()
-            # recognize and process incomplete data
-            # ASSUMES PROGRAM STOPPED MID FILE
             if not data.endswith(']'):
                 data += ']'
             data = np.array(eval(data))
-            matrixGenerators = np.array([dataObj['id'][3:] for dataObj in data]).astype(int)
+            matrix_generators = np.array([dataObj['id'][3:] for dataObj in data]).astype(int)
 
-            
-            fileNumber = int(os.path.basename(lastFile)[:-4].split('-')[1])
+            file_number = int(os.path.basename(last_file)[:-4].split('-')[1])
             continuing = True
-            dirpath = os.path.dirname(lastFile)
+            dir_path = os.path.dirname(last_file)
     
+    # begin calculation
     print(" running...")
-    while fileNumber <= numFiles:
-        # continuing file
+    while file_number <= num_files:
         if continuing:
             continuing = False
-            start = np.max(matrixGenerators) + 1
-            filepath = lastFile
-        # new file
+            start = np.max(matrix_generators) + 1
+            filepath = last_file
         else:
-            start = int(fileNumber * matricesPerFile)
-            filepath = f'{dirpath}/laplacian{dim}-{fileNumber}.txt'
+            start = 0
+            filepath = f'{dir_path}/laplacian{dim}-{file_number}.txt'
             with open(filepath, 'a') as f:
                 f.write('[')
-        stop = int((fileNumber + 1) * matricesPerFile)
+
+        stop = int((file_number + 1) * matrices_per_file)
         # add rows
         for generator in range(start, stop):
-            if generator == numMatrices:
+            if generator == num_matrices:
                 break
 
             id = f'{id_dim}{generator}'
             matrix = matrixGeneration.getLaplacianFromId(id)
-            [eigenValues, eigenVectors] = matrixMath.getEigenState(matrix)
-            controlClass = matrixMath.pbhTest(matrix, eigenValues, eigenVectors)
+            [eigen_values, eigen_vectors] = matrixMath.getEigenState(matrix)
+            control_class = matrixMath.pbhTest(matrix, eigen_values, eigen_vectors)
 
-            dataObj = { 'id': f'{id[0:2]}-{id[2:]}', 'class': controllabilityDict[controlClass] }
+            data_obj = { 'id': f'{id[0:2]}-{id[2:]}', 'class': controllability_dict[control_class] }
             with open(filepath, 'a') as f:
                 f.write('\n')
-                f.write(str(dataObj))
+                f.write(str(data_obj))
                 f.write(',')
 
         with open(filepath, 'a') as f:
             f.write('\n')
             f.write(']')
 
-        fileNumber += 1
+        file_number += 1
 
-startTime = datetime.datetime.now()
-# categorize(8, "data/laplacian8-20230206-114814")
-categorize(3)
-print('Done')
-print(f'Execution time: {datetime.datetime.now() - startTime}')
+if __name__ == '__main__':
+    dim = int(input('dimension:'))
+    path = input('path:')
+    if path == '':
+        path = None
+    start_time = datetime.datetime.now()
+    categorize(dim, path)
+    print(f'Execution time: {datetime.datetime.now() - start_time}')
 
 

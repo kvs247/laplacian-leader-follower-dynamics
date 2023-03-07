@@ -44,4 +44,4 @@ dim 6: 13 sec
 
 dim 7: 28 min
 
-dim 8: likely >100 hr
+dim 8: ~150 hr

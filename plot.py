@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-filepath = 'data/v2/counts.txt'
+filepath = 'data/v2-20230212/counts.txt'
 with open(filepath) as f:
     data = eval(f.read())
 
@@ -16,9 +16,6 @@ for index, (key, value) in enumerate(data.items()):
     # print(index, key, value)
     dim = int(key)
     numMatrices = 2 ** (dim / 2 * (dim - 1))
-    ####
-    if dim == 8:
-        numMatrices = 81000000
     yEC[index] = value['EC'] / numMatrices
     yCC[index] = value['CC'] / numMatrices
     numCUMatrices = value['CU-dis'] + value['CU-degen'] + value['CU-nondegen']

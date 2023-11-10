@@ -8,11 +8,10 @@
 int main()
 {
 
-  getLaplacianMatrices(4);
-  // binaryVectorsTest();
-  // int* x;
-  // for (int i = 0; i < 5; i++) {
-  //   x[i] = i;
-  // }
-  // yo(x);
+  int **laplacianMats = getLaplacianMatrices(4);
+  int numLapMats = getNumLaplacianMatrices(4);
+  for (int i = 0; i < numLapMats; i++) {
+    int *lapMat = laplacianMats[i];
+    printMatrix(4, lapMat);
+  }
 }

@@ -1,10 +1,14 @@
 #include <stdio.h>
 
 void printVector(int dim, int* vector) {
+    printf("[");
     for (int i = 0; i < dim; i++) {
         printf("%d", vector[i]);
+        if (i != (dim - 1)) {
+            printf(", ");
+        }
     }
-    printf("\n");
+    printf("]\n");
 }
 
 void printMatrix(int dim, int matrix[])
@@ -39,9 +43,4 @@ void printBinaryVectors(int** binaryVectors) {
         }
         printf("\n");
     }
-}
-
-void yo(int* arr) {
-    int dim = sizeof(arr) / sizeof(arr[0]);
-    printf("%d", dim);
 }

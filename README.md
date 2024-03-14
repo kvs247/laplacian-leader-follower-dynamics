@@ -1,47 +1,21 @@
-# Laplacian Leader Follower Dynamics
+# Laplacian Leader-Follower Dynamics
 
-K. Schneider
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-## matrixMath.py
+## Description
 
-Provides functions for determining matrix controllability using linear algebra.
+This project performs computations related to the Laplacian Leader-Follower Dynamics algorithm for graphs (networks). It is currently being rewritten from Python to C.
 
-## matrixGeneration.py
+## Installation
 
-Provides functions for generating Laplacian matrices
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/laplacian-leader-follower-dynamics.git
+2. Compile executable:
 
-## Algorithm progress
+    ```bash
+    gcc src/main.c -o bin/main
+3. Run executable:
 
-### 1 Starting point 
-
-The first version of the algorithm was at a point where it would take well over 12 hours to categorize all 7 dimensional Laplacian matrices. It seems a long way from categorizing all matrices with dimensions in the double-dgits. This version would first generate the set of Laplacian matrices for the given dimension. I quickly realized this may create a memory problem, but would also be problematic as there would be no way to pause the calculation and continue later without repeating many computations.
-
-### 2 Different Approach
-
-The second iteration reorganized the process so that a matrix is generated, controllability is determined, and data is saved before moving on to the next matrix. This allows the program to pause and resume later, giving the potential to break up calculations into many sessions. I also found this algorithm to be must faster. This method categorized all 7 dimensional Laplacian matrices within 3 hours.
-
-### 3 Timing Alogrithm
-
-In the current state (1/31), the algorithm has the following performance:
-
-dim 5: 0.5 sec
-
-dim 6: 30 sec
-
-dim 7: 1.15 hr
-
-dim 8: likely >100 hr
-
-We would love to add efficiency to algorithm so we might be able to process more matrices.
-
-### 4 Algorithm Speed Improvment 
-
-Reorganized and reordered steps PBH Test for more efficient process. This made algorithm about 2x faster. New times: 
-
-dim 5: 0.27 sec
-
-dim 6: 13 sec
-
-dim 7: 28 min
-
-dim 8: ~150 hr
+    ```bash
+    ./bin/main

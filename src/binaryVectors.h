@@ -1,15 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
-int** getBinaryVectors(int dim) {
-    int numVectors = (1 << dim) - 2;
-    int** result = (int**)malloc(numVectors * sizeof(int*));
+int **getBinaryVectors(double dim)
+{
+    int numVectors = pow(2, dim) - 2;
+    int **result = (int **)malloc(numVectors * sizeof(int *));
 
-    for (int i = 0; i < numVectors; ++i) {
-        result[i] = (int*)malloc(dim * sizeof(int));
+    for (int i = 0; i < numVectors; ++i)
+    {
+        result[i] = (int *)malloc(dim * sizeof(int));
 
         int val = i + 1;
-        for (int j = dim - 1; j >= 0; --j) {
+        for (int j = dim - 1; j >= 0; --j)
+        {
             result[i][j] = val % 2;
             val /= 2;
         }
@@ -18,14 +22,16 @@ int** getBinaryVectors(int dim) {
     return result;
 }
 
-int binaryVectorsTest() {
+int binaryVectorsTest()
+{
     int dim = 5;
-    int** result = getBinaryVectors(dim);
+    int **result = getBinaryVectors(dim);
 
     printBinaryVectors(result);
 
     // Free the allocated memory
-    for (int i = 0; i < (1 << dim) - 1; ++i) {
+    for (int i = 0; i < (1 << dim) - 1; ++i)
+    {
         free(result[i]);
     }
     free(result);

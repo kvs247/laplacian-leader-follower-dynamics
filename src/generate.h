@@ -55,13 +55,13 @@ int *getLapMatFromAdjMat(int dim, int *adjMat)
 
 int getNumLaplacianMatrices(int dim)
 {
-    return (1 << ((dim / 2) * (dim - 1))) - 2;
+    return pow(2, ((double)dim / 2) * (dim - 1)) - 2;
 }
 
 int **getLaplacianMatrices(int dim)
 {
-    int numElesAboveDiag = (dim / 2) * (dim - 1);
-    int resultSize = (1 << (numElesAboveDiag)) - 2;
+    double numElesAboveDiag = ((double)dim / 2) * (dim - 1);
+    double resultSize = pow(2, numElesAboveDiag) - 2;
     int **result = (int **)malloc(resultSize * sizeof(int *));
     int **binaryVectors = getBinaryVectors(numElesAboveDiag);
 
